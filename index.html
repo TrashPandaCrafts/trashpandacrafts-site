@@ -158,4 +158,36 @@
 
         <div class="ig-placeholder">
             <div id="feed-crafts" class="feed-wrapper active">
-                <script src="https
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <iframe src="https://lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
+            </div>
+
+            <div id="feed-drinks" class="feed-wrapper">
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <iframe src="https://lightwidget.com/widgets/cfba6fb115a9548c90fac8066553be0a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchFeed(feedType) {
+            const craftsFeed = document.getElementById('feed-crafts');
+            const drinksFeed = document.getElementById('feed-drinks');
+            const craftsBtn = document.getElementById('btn-crafts');
+            const drinksBtn = document.getElementById('btn-drinks');
+
+            if (feedType === 'crafts') {
+                craftsFeed.classList.add('active');
+                drinksFeed.classList.remove('active');
+                craftsBtn.classList.add('active');
+                drinksBtn.classList.remove('active');
+            } else if (feedType === 'drinks') {
+                drinksFeed.classList.add('active');
+                craftsFeed.classList.remove('active');
+                drinksBtn.classList.add('active');
+                craftsBtn.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
