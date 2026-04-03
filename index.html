@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trash Panda Crafts</title>
     <style>
-        /* Import a bold, graffiti-style font from Google */
-        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
-
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            /* Dark mode background and text colors */
             background-color: #121212; 
             color: #e0e0e0; 
             margin: 0;
@@ -21,43 +19,38 @@
             margin: 0 auto;
         }
         
+        /* --- Banner Styling --- */
         .banner {
-            width: 100%; 
-            border-radius: 8px; 
-            margin-bottom: 20px; 
+            width: 100%; /* Spans the full width */
+            border-radius: 8px; /* Smooth corners */
+            margin-bottom: 20px; /* Space below */
         }
 
-        /* --- New Custom Title Styling --- */
-        h1 {
-            font-family: 'Luckiest Guy', cursive;
-            color: white; /* White text fill */
-            font-size: 4em; /* Makes it nice and big */
-            margin-top: 10px;
-            margin-bottom: 5px;
-            letter-spacing: 2px;
-            
-            /* Creates the thick black outline */
-            -webkit-text-stroke: 3px black;
-            
-            /* Creates the hard drop shadow behind it */
-            text-shadow: 6px 6px 0px black;
+        /* --- Transparent Title Image Styling --- */
+        .title-image {
+            width: 100%;
+            max-width: 800px; /* Prevents the title from getting too massive on big screens */
+            margin: 10px auto; /* Centers the image */
+            display: block; /* Ensures it sits neatly above the subtitle */
         }
 
-        /* Adjusted paragraph text under the title to stand out a bit more */
+        /* Subtitle text under the title image */
         .subtitle {
             font-size: 1.2em;
             color: #b0b0b0;
             margin-bottom: 30px;
         }
 
+        /* Adjusted placeholder for dark mode */
         .ig-placeholder {
-            border: 2px dashed #444; 
+            border: 2px dashed #444; /* Darker border */
             padding: 100px 20px;
             margin-top: 30px;
-            background-color: #1e1e1e; 
-            border-radius: 8px; 
+            background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
+            border-radius: 8px; /* Added a slight rounding to the corners for a cleaner look */
         }
         
+        /* Ensures any standard links adapt to dark mode */
         a {
             color: #66b3ff;
         }
@@ -70,7 +63,8 @@
     <div class="container">
         <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
 
-        <h1>Welcome to Trash Panda Crafts</h1>
+        <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
+        
         <p class="subtitle">Junk journaling, punch-stamping, and paper crafts.</p>
         
         <div class="ig-placeholder">
