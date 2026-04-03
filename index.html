@@ -5,37 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trash Panda Crafts</title>
     <style>
+        /* Import a bold, graffiti-style font from Google */
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            /* Dark mode background and text colors */
             background-color: #121212; 
             color: #e0e0e0; 
             margin: 0;
             padding: 50px;
         }
         .container {
-            max-width: 1600px; /* Increased from 800px */
+            max-width: 1600px; 
             margin: 0 auto;
         }
         
-        /* --- Banner Styling --- */
         .banner {
-            width: 100%; /* Spans the full width */
-            border-radius: 8px; /* Smooth corners */
-            margin-bottom: 20px; /* Space below */
+            width: 100%; 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
         }
 
-        /* Adjusted placeholder for dark mode */
+        /* --- New Custom Title Styling --- */
+        h1 {
+            font-family: 'Luckiest Guy', cursive;
+            color: white; /* White text fill */
+            font-size: 4em; /* Makes it nice and big */
+            margin-top: 10px;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            
+            /* Creates the thick black outline */
+            -webkit-text-stroke: 3px black;
+            
+            /* Creates the hard drop shadow behind it */
+            text-shadow: 6px 6px 0px black;
+        }
+
+        /* Adjusted paragraph text under the title to stand out a bit more */
+        .subtitle {
+            font-size: 1.2em;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
         .ig-placeholder {
-            border: 2px dashed #444; /* Darker border */
+            border: 2px dashed #444; 
             padding: 100px 20px;
             margin-top: 30px;
-            background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
-            border-radius: 8px; /* Added a slight rounding to the corners for a cleaner look */
+            background-color: #1e1e1e; 
+            border-radius: 8px; 
         }
         
-        /* Ensures any standard links adapt to dark mode */
         a {
             color: #66b3ff;
         }
@@ -49,7 +71,7 @@
         <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
 
         <h1>Welcome to Trash Panda Crafts</h1>
-        <p>Junk journaling, punch-stamping, and paper crafts.</p>
+        <p class="subtitle">Junk journaling, punch-stamping, and paper crafts.</p>
         
         <div class="ig-placeholder">
             <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
