@@ -14,6 +14,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            /* Dark mode background and text colors */
             background-color: #121212; 
             color: #e0e0e0; 
             margin: 0;
@@ -27,14 +28,14 @@
         
         /* --- Banner & Title Styling --- */
         .banner {
-            width: 100%; 
-            border-radius: 8px; 
+            width: 100%; /* Spans the full width of the container */
+            border-radius: 8px; /* Smooth corners */
             margin-bottom: 20px; 
         }
 
         .title-image {
             width: 100%;
-            max-width: 800px; 
+            max-width: 800px; /* Prevents title from becoming too large */
             margin: 10px auto; 
             display: block; 
         }
@@ -75,7 +76,7 @@
             border-color: #66b3ff;
         }
 
-        /* Styling for whichever tab is currently selected */
+        /* Styling for the currently active tab */
         .toggle-btn.active {
             background-color: #66b3ff;
             color: #121212;
@@ -130,40 +131,29 @@
 
         <div class="ig-placeholder">
             <div id="feed-crafts" class="feed-wrapper active">
-                
-                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-                
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
             </div>
 
             <div id="feed-drinks" class="feed-wrapper">
-                
                 </div>
         </div>
     </div>
 
     <script>
         function switchFeed(feedType) {
-            // Get the feed containers
             const craftsFeed = document.getElementById('feed-crafts');
             const drinksFeed = document.getElementById('feed-drinks');
-            
-            // Get the buttons
             const craftsBtn = document.getElementById('btn-crafts');
             const drinksBtn = document.getElementById('btn-drinks');
 
-            // Logic for switching to the Crafts feed
             if (feedType === 'crafts') {
                 craftsFeed.classList.add('active');
                 drinksFeed.classList.remove('active');
-                
                 craftsBtn.classList.add('active');
                 drinksBtn.classList.remove('active');
-            } 
-            // Logic for switching to the Drinks feed
-            else if (feedType === 'drinks') {
+            } else if (feedType === 'drinks') {
                 drinksFeed.classList.add('active');
                 craftsFeed.classList.remove('active');
-                
                 drinksBtn.classList.add('active');
                 craftsBtn.classList.remove('active');
             }
