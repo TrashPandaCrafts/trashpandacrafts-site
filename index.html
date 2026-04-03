@@ -14,11 +14,10 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            /* Dark mode background and text colors */
             background-color: #121212; 
             color: #e0e0e0; 
             margin: 0;
-            padding: 50px;
+            padding: 50px; /* Standard desktop padding */
         }
         
         .container {
@@ -76,7 +75,6 @@
             border-color: #66b3ff;
         }
 
-        /* Styling for the active tab */
         .toggle-btn.active {
             background-color: #66b3ff;
             color: #121212;
@@ -91,12 +89,10 @@
             border-radius: 8px; 
         }
         
-        /* Hides the inactive feed */
         .feed-wrapper {
             display: none;
         }
 
-        /* Shows the active feed */
         .feed-wrapper.active {
             display: block;
         }
@@ -108,11 +104,39 @@
             color: #99ccff;
         }
         
-        /* LightWidget specific fix to ensure iframes size correctly */
         .lightwidget-widget {
             width: 100%;
             border: 0;
             overflow: hidden;
+        }
+
+        /* ---------------------------------------------------- */
+        /* --- MOBILE OPTIMIZATIONS (Screens under 600px) --- */
+        /* ---------------------------------------------------- */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px; /* Less bulk on the sides */
+            }
+
+            .subtitle {
+                font-size: 1.1em; /* Scaled down for readability */
+                margin-bottom: 30px;
+            }
+
+            .feed-toggles {
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 10px;
+                padding: 0 20px;
+            }
+
+            .toggle-btn {
+                width: 100%; /* Full-width buttons for easier tapping */
+                font-size: 1.1em;
+            }
+
+            .ig-placeholder {
+                padding: 20px 10px; /* Tighter feed container */
+            }
         }
     </style>
 </head>
@@ -131,11 +155,13 @@
 
         <div class="ig-placeholder">
             <div id="feed-crafts" class="feed-wrapper active">
-                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <iframe src="https://lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
             </div>
 
             <div id="feed-drinks" class="feed-wrapper">
-                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://lightwidget.com/widgets/cfba6fb115a9548c90fac8066553be0a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                <iframe src="https://lightwidget.com/widgets/cfba6fb115a9548c90fac8066553be0a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
             </div>
         </div>
     </div>
