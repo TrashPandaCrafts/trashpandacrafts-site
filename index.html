@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trash Panda Crafts</title>
     <style>
+        /* --- Load the Custom Font --- */
+        @font-face {
+            font-family: 'Sketch Block'; /* Updated the name here */
+            src: url('sketch_block.ttf') format('truetype'); /* Updated the file name here */
+        }
+
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -34,11 +40,16 @@
             display: block; /* Ensures it sits neatly above the subtitle */
         }
 
-        /* Subtitle text under the title image */
+        /* --- Subtitle text under the title image --- */
         .subtitle {
-            font-size: 1.2em;
+            font-family: 'Sketch Block', Arial, sans-serif; /* Applies your new font! */
+            font-size: 1.5em; 
             color: #b0b0b0;
             margin-bottom: 30px;
+            line-height: 1.5; 
+            max-width: 800px; 
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Adjusted placeholder for dark mode */
@@ -65,7 +76,7 @@
 
         <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
         
-        <p class="subtitle">Junk journaling, punch-stamping, and paper crafts.</p>
+        <p class="subtitle">I'm just a regular dad, digging through the recycling bin so you don't have to. I find the hidden art in boxes, junk, & scraps, then punch them into 1-inch stamps and like my occasional random beer! Hope to see you again and hope you join me in my journey to find peace through my hobby.</p>
         
         <div class="ig-placeholder">
             <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
