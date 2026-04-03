@@ -90,4 +90,84 @@
             border-radius: 8px; 
         }
         
-        /* Hides the
+        /* Hides the inactive feed */
+        .feed-wrapper {
+            display: none;
+        }
+
+        /* Shows the active feed */
+        .feed-wrapper.active {
+            display: block;
+        }
+        
+        a {
+            color: #66b3ff;
+        }
+        a:hover {
+            color: #99ccff;
+        }
+        
+        /* LightWidget specific fix to ensure iframes size correctly */
+        .lightwidget-widget {
+            width: 100%;
+            border: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
+
+        <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
+        
+        <p class="subtitle">I'm just a regular dad, digging through the recycling bin so you don't have to. I find the hidden art in boxes, junk, & scraps, then punch them into 1-inch stamps and like my occasional random beer! Hope to see you again and hope you join me in my journey to find peace through my hobby.</p>
+        
+        <div class="feed-toggles">
+            <button id="btn-crafts" class="toggle-btn active" onclick="switchFeed('crafts')">@TrashPandaCraftsHTX</button>
+            <button id="btn-drinks" class="toggle-btn" onclick="switchFeed('drinks')">@TrashPandaDrinks</button>
+        </div>
+
+        <div class="ig-placeholder">
+            <div id="feed-crafts" class="feed-wrapper active">
+                
+                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+                
+            </div>
+
+            <div id="feed-drinks" class="feed-wrapper">
+                
+                </div>
+        </div>
+    </div>
+
+    <script>
+        function switchFeed(feedType) {
+            // Get the feed containers
+            const craftsFeed = document.getElementById('feed-crafts');
+            const drinksFeed = document.getElementById('feed-drinks');
+            
+            // Get the buttons
+            const craftsBtn = document.getElementById('btn-crafts');
+            const drinksBtn = document.getElementById('btn-drinks');
+
+            // Logic for switching to the Crafts feed
+            if (feedType === 'crafts') {
+                craftsFeed.classList.add('active');
+                drinksFeed.classList.remove('active');
+                
+                craftsBtn.classList.add('active');
+                drinksBtn.classList.remove('active');
+            } 
+            // Logic for switching to the Drinks feed
+            else if (feedType === 'drinks') {
+                drinksFeed.classList.add('active');
+                craftsFeed.classList.remove('active');
+                
+                drinksBtn.classList.add('active');
+                craftsBtn.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
