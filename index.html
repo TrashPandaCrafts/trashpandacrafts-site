@@ -18,6 +18,16 @@
             max-width: 1600px; /* Increased from 800px */
             margin: 0 auto;
         }
+        
+        /* --- Banner Styling --- */
+        .banner {
+            width: 100%; /* Makes it span the full width of the container */
+            max-height: 300px; /* Adjust this to control how tall it is */
+            object-fit: cover; /* Prevents the image from looking stretched or squished */
+            border-radius: 8px; /* Gives it smooth, rounded corners */
+            margin-bottom: 20px; /* Adds space between the banner and the text */
+        }
+
         /* Adjusted placeholder for dark mode */
         .ig-placeholder {
             border: 2px dashed #444; /* Darker border */
@@ -38,6 +48,8 @@
 </head>
 <body>
     <div class="container">
+        <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
+
         <h1>Welcome to Trash Panda Crafts</h1>
         <p>Junk journaling, punch-stamping, and paper crafts.</p>
         
