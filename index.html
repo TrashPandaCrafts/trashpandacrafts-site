@@ -8,8 +8,9 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #fafafa;
-            color: #333;
+            /* Dark mode background and text colors */
+            background-color: #121212; 
+            color: #e0e0e0; 
             margin: 0;
             padding: 50px;
         }
@@ -17,12 +18,21 @@
             max-width: 800px;
             margin: 0 auto;
         }
-        /* This is just a placeholder box for your IG feed */
+        /* Adjusted placeholder for dark mode */
         .ig-placeholder {
-            border: 2px dashed #ccc;
+            border: 2px dashed #444; /* Darker border */
             padding: 100px 20px;
             margin-top: 30px;
-            background-color: #fff;
+            background-color: #1e1e1e; /* Slightly lighter than the body for contrast */
+            border-radius: 8px; /* Added a slight rounding to the corners for a cleaner look */
+        }
+        
+        /* Ensures any standard links adapt to dark mode */
+        a {
+            color: #66b3ff;
+        }
+        a:hover {
+            color: #99ccff;
         }
     </style>
 </head>
@@ -32,18 +42,16 @@
         <p>Junk journaling, punch-stamping, and paper crafts.</p>
         
         <div class="ig-placeholder">
-            <!-- Place <div> tag where you want the feed to appear -->
-<div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+            <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
 
-<!-- The Javascript can be moved to the end of the html page before the </body> tag -->
-<script type="text/javascript">
-/* curator-feed-default-feed-layout */
-(function(){
-var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
-i.src="https://cdn.curator.io/published/2cb2d89a-3c11-4d93-8fdd-6a97c878dca6.js";
-e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-})();
-</script>
+            <script type="text/javascript">
+            /* curator-feed-default-feed-layout */
+            (function(){
+            var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+            i.src="https://cdn.curator.io/published/2cb2d89a-3c11-4d93-8fdd-6a97c878dca6.js";
+            e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+            })();
+            </script>
         </div>
     </div>
 </body>
