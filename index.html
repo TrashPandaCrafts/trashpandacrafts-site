@@ -84,12 +84,11 @@
             border-color: #66b3ff;
         }
 
-        /* --- Feed Container Styling --- */
+        /* --- Feed Container Styling (Updated to remove border and background) --- */
         .ig-placeholder {
-            border: 2px dashed #444; 
-            padding: 40px 20px; 
-            background-color: #1e1e1e; 
-            border-radius: 8px; 
+            border: none; 
+            padding: 20px 0; 
+            background-color: transparent; 
         }
         
         .feed-wrapper {
@@ -113,7 +112,7 @@
             overflow: hidden;
         }
 
-        /* --- MOBILE OPTIMIZATIONS (Screens under 600px) --- */
+        /* --- MOBILE OPTIMIZATIONS --- */
         @media (max-width: 600px) {
             body {
                 padding: 20px 15px;
@@ -136,7 +135,7 @@
             }
 
             .ig-placeholder {
-                padding: 20px 10px;
+                padding: 10px 0;
             }
         }
     </style>
