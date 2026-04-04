@@ -81,10 +81,15 @@
             padding: 15px;
             background-color: #1a1a1a;
             border-radius: 8px;
-            /* Updated to center all text and elements within the panels */
             text-align: center; 
             position: sticky;
             top: 20px;
+        }
+
+        /* --- Specific override for the Left Panel --- */
+        .left-panel {
+            border: none;
+            background-color: transparent;
         }
 
         /* --- Typography & Elements --- */
@@ -174,7 +179,7 @@
 
     <div class="feed-layout-wrapper">
         
-        <aside class="side-panel">
+        <aside class="side-panel left-panel">
             <h3 class="panel-title">Currently Reading...</h3>
             <span class="book-title">Kaiju Preservation Society</span>
             <a href="https://www.goodreads.com/book/show/57693406-the-kaiju-preservation-society?ac=1&from_search=true&qid=8IfmE68Cr7&rank=1" target="_blank">
