@@ -20,15 +20,77 @@
             background-color: #121212; 
             color: #e0e0e0; 
             margin: 0;
-            padding: 50px; 
+            padding: 20px; 
         }
         
-        .container {
-            max-width: 1600px; 
+        /* --- Layout Wrapper for Side Panels --- */
+        .page-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 1800px;
             margin: 0 auto;
+            gap: 20px;
+        }
+
+        .container {
+            flex: 2; /* Main content takes up more space */
+            max-width: 1000px;
+        }
+
+        .side-panel {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            border: 2px dashed #444; /* Requested dashed border */
+            padding: 15px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            text-align: left; /* Better for reading lists */
+        }
+
+        /* --- Side Panel Typography --- */
+        .panel-title {
+            font-family: 'Sketch Block', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.4em;
+            color: #66b3ff;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .book-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .book-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: transform 0.2s;
+        }
+
+        .book-img:hover {
+            transform: scale(1.02);
+        }
+
+        .reading-dates {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #333;
+            margin: 20px 0;
         }
         
-        /* --- Banner & Title Styling --- */
+        /* --- Existing Styles (Banner, Toggles, etc.) --- */
         .banner {
             width: 100%; 
             border-radius: 8px; 
@@ -48,12 +110,8 @@
             color: #b0b0b0;
             margin-bottom: 40px;
             line-height: 1.5; 
-            max-width: 800px; 
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* --- Clickable Username Tabs --- */
         .feed-toggles {
             display: flex;
             justify-content: center;
@@ -73,38 +131,20 @@
             transition: all 0.3s ease;
         }
 
-        .toggle-btn:hover {
-            color: #e0e0e0;
-            border-color: #66b3ff;
-        }
-
         .toggle-btn.active {
             background-color: #66b3ff;
             color: #121212;
             border-color: #66b3ff;
         }
 
-        /* --- Feed Container Styling (Updated to remove border and background) --- */
         .ig-placeholder {
             border: none; 
             padding: 20px 0; 
             background-color: transparent; 
         }
         
-        .feed-wrapper {
-            display: none;
-        }
-
-        .feed-wrapper.active {
-            display: block;
-        }
-        
-        a {
-            color: #66b3ff;
-        }
-        a:hover {
-            color: #99ccff;
-        }
+        .feed-wrapper { display: none; }
+        .feed-wrapper.active { display: block; }
         
         .lightwidget-widget {
             width: 100%;
@@ -113,57 +153,76 @@
         }
 
         /* --- MOBILE OPTIMIZATIONS --- */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 15px;
-            }
-
-            .subtitle {
-                font-size: 1.1em;
-                margin-bottom: 30px;
-            }
-
-            .feed-toggles {
+        @media (max-width: 1100px) {
+            .page-wrapper {
                 flex-direction: column;
-                gap: 10px;
-                padding: 0 20px;
+                align-items: center;
             }
-
-            .toggle-btn {
+            .side-panel {
+                width: 90%;
+                max-width: none;
+            }
+            .container {
                 width: 100%;
-                font-size: 1.1em;
+                order: -1; /* Keep main content at the top on mobile */
             }
+        }
 
-            .ig-placeholder {
-                padding: 10px 0;
-            }
+        @media (max-width: 600px) {
+            .subtitle { font-size: 1.1em; }
+            .feed-toggles { flex-direction: column; gap: 10px; }
+            .toggle-btn { width: 100%; font-size: 1.1em; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
 
-        <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
-        
-        <p class="subtitle">I'm just a regular dad, digging through the recycling bin so you don't have to. I find the hidden art in boxes, junk, & scraps, then punch them into 1-inch stamps and like my occasional random beer! Hope to see you again and hope you join me in my journey to find peace through my hobby.</p>
-        
-        <div class="feed-toggles">
-            <button id="btn-crafts" class="toggle-btn active" onclick="switchFeed('crafts')">@TrashPandaCraftsHTX</button>
-            <button id="btn-drinks" class="toggle-btn" onclick="switchFeed('drinks')">@TrashPandaDrinks</button>
-        </div>
+    <div class="page-wrapper">
+        <aside class="side-panel">
+            <h3 class="panel-title">Currently Reading...</h3>
+            <span class="book-title">Kaiju Preservation Society</span>
+            <a href="https://www.goodreads.com/book/show/57693406-the-kaiju-preservation-society?ac=1&from_search=true&qid=8IfmE68Cr7&rank=1" target="_blank">
+                <img src="currentlyreading.jpg" alt="Kaiju Preservation Society" class="book-img">
+            </a>
+            <span class="reading-dates">4/3/2026 - ??/??/????</span>
 
-        <div class="ig-placeholder">
-            <div id="feed-crafts" class="feed-wrapper active">
-                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-                <iframe src="https://lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
+            <hr>
+
+            <h3 class="panel-title">Previously Finished Reading</h3>
+            <span class="book-title">Starter Villain</span>
+            <a href="https://www.goodreads.com/book/show/61885029-starter-villain" target="_blank">
+                <img src="previouslyread.jpg" alt="Starter Villain" class="book-img">
+            </a>
+            <span class="reading-dates">3/31/2026 - 4/2/2026</span>
+        </aside>
+
+        <main class="container">
+            <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
+            <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
+            
+            <p class="subtitle">I'm just a regular dad, digging through the recycling bin so you don't have to. I find the hidden art in boxes, junk, & scraps, then punch them into 1-inch stamps and like my occasional random beer! Hope to see you again and hope you join me in my journey to find peace through my hobby.</p>
+            
+            <div class="feed-toggles">
+                <button id="btn-crafts" class="toggle-btn active" onclick="switchFeed('crafts')">@TrashPandaCraftsHTX</button>
+                <button id="btn-drinks" class="toggle-btn" onclick="switchFeed('drinks')">@TrashPandaDrinks</button>
             </div>
 
-            <div id="feed-drinks" class="feed-wrapper">
-                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-                <iframe src="https://lightwidget.com/widgets/cfba6fb115a9548c90fac8066553be0a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
+            <div class="ig-placeholder">
+                <div id="feed-crafts" class="feed-wrapper active">
+                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                    <iframe src="https://lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
+                </div>
+
+                <div id="feed-drinks" class="feed-wrapper">
+                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+                    <iframe src="https://lightwidget.com/widgets/cfba6fb115a9548c90fac8066553be0a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
+                </div>
             </div>
-        </div>
+        </main>
+
+        <aside class="side-panel">
+            <h3 class="panel-title">Coming Soon...</h3>
+            </aside>
     </div>
 
     <script>
