@@ -20,7 +20,7 @@
             background-color: #121212; 
             color: #e0e0e0; 
             margin: 0;
-            padding: 50px; /* Standard desktop padding */
+            padding: 50px; 
         }
         
         .container {
@@ -114,48 +114,28 @@
         }
 
         /* --- Fix for LightWidget Popup Text Visibility --- */
-        #lightwidget_lightbox .lightwidget__caption, 
-        #lightwidget_lightbox .lightwidget__username,
-        #lightwidget_lightbox .lightwidget__stats {
-            color: #333 !important; /* Forces the text to be dark charcoal for readability */
+        #lightwidget_lightbox, 
+        #lightwidget_lightbox * {
+            color: #000000 !important; /* Forces all text in the popup to black */
+        }
+        #lightwidget_lightbox a {
+            color: #0056b3 !important; /* Readable dark blue links */
         }
 
-        /* ---------------------------------------------------- */
-        /* --- MOBILE OPTIMIZATIONS (Screens under 600px) --- */
-        /* ---------------------------------------------------- */
+        /* --- MOBILE OPTIMIZATIONS --- */
         @media (max-width: 600px) {
-            body {
-                padding: 20px 15px; /* Less bulk on the sides */
-            }
-
-            .subtitle {
-                font-size: 1.1em; /* Scaled down for readability */
-                margin-bottom: 30px;
-            }
-
-            .feed-toggles {
-                flex-direction: column; /* Stack buttons vertically */
-                gap: 10px;
-                padding: 0 20px;
-            }
-
-            .toggle-btn {
-                width: 100%; /* Full-width buttons for easier tapping */
-                font-size: 1.1em;
-            }
-
-            .ig-placeholder {
-                padding: 20px 10px; /* Tighter feed container */
-            }
+            body { padding: 20px 15px; }
+            .subtitle { font-size: 1.1em; margin-bottom: 30px; }
+            .feed-toggles { flex-direction: column; gap: 10px; padding: 0 20px; }
+            .toggle-btn { width: 100%; font-size: 1.1em; }
+            .ig-placeholder { padding: 20px 10px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
-
         <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
-        
         <p class="subtitle">I'm just a regular dad, digging through the recycling bin so you don't have to. I find the hidden art in boxes, junk, & scraps, then punch them into 1-inch stamps and like my occasional random beer! Hope to see you again and hope you join me in my journey to find peace through my hobby.</p>
         
         <div class="feed-toggles">
@@ -168,7 +148,6 @@
                 <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
                 <iframe src="https://lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
             </div>
-
             <div id="feed-drinks" class="feed-wrapper">
                 <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
                 <iframe src="https://lightwidget.com/widgets/cfba6fb115a9548c90fac8066553be0a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
