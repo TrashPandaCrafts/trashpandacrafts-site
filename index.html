@@ -86,7 +86,7 @@
             top: 20px;
         }
 
-        /* --- Specific override for the Left Panel --- */
+        /* Left Panel clean style override */
         .left-panel {
             border: none;
             background-color: transparent;
@@ -102,13 +102,13 @@
             margin-bottom: 15px;
         }
 
-        .book-title {
+        .item-title {
             font-weight: bold;
             margin-bottom: 10px;
             display: block;
         }
 
-        .book-img {
+        .display-img {
             width: 100%;
             height: auto;
             border-radius: 4px;
@@ -118,11 +118,12 @@
             margin-right: auto;
         }
 
-        .reading-dates {
+        .info-text {
             font-size: 0.9em;
             color: #888;
             margin-bottom: 25px;
             display: block;
+            line-height: 1.6;
         }
 
         hr { border: 0; border-top: 1px solid #333; margin: 20px 0; }
@@ -174,27 +175,27 @@
 
     <header class="header-section">
         <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
-        <p class="subtitle">Welcome to my Hobbies! From junk journaling to drinking random beers to reading books! Hope you enjoy the site as much as I am enjoying learning how to build it. Follow my Instagram pages for more!.</p>
+        <p class="subtitle">I'm just a regular dad, digging through the recycling bin so you don't have to. I find the hidden art in boxes, junk, & scraps, then punch them into 1-inch stamps and like my occasional random beer! Hope to see you again and hope you join me in my journey to find peace through my hobby.</p>
     </header>
 
     <div class="feed-layout-wrapper">
         
         <aside class="side-panel left-panel">
             <h3 class="panel-title">Currently Reading...</h3>
-            <span class="book-title">Kaiju Preservation Society</span>
+            <span class="item-title">Kaiju Preservation Society</span>
             <a href="https://www.goodreads.com/book/show/57693406-the-kaiju-preservation-society?ac=1&from_search=true&qid=8IfmE68Cr7&rank=1" target="_blank">
-                <img src="currentlyreading.jpg" alt="Kaiju Preservation Society" class="book-img">
+                <img src="currentlyreading.jpg" alt="Kaiju Preservation Society" class="display-img">
             </a>
-            <span class="reading-dates">4/3/2026 - ??/??/????</span>
+            <span class="info-text">4/3/2026 - ??/??/????</span>
 
             <hr>
 
-            <h3 class="panel-title">Previously Read</h3>
-            <span class="book-title">Starter Villain</span>
+            <h3 class="panel-title">Previously Finished Reading</h3>
+            <span class="item-title">Starter Villain</span>
             <a href="https://www.goodreads.com/book/show/61885029-starter-villain" target="_blank">
-                <img src="previouslyread.jpg" alt="Starter Villain" class="book-img">
+                <img src="previouslyread.jpg" alt="Starter Villain" class="display-img">
             </a>
-            <span class="reading-dates">3/31/2026 - 4/2/2026</span>
+            <span class="info-text">3/31/2026 - 4/2/2026</span>
         </aside>
 
         <main class="main-feed-container">
@@ -208,7 +209,6 @@
                     <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
                     <iframe src="https://lightwidget.com/widgets/33f07f9c04cf5920a9acceab44c400a3.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
                 </div>
-
                 <div id="feed-drinks" class="feed-wrapper">
                     <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
                     <iframe src="https://lightwidget.com/widgets/cfba6fb115a9548c90fac8066553be0a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget"></iframe>
@@ -217,8 +217,21 @@
         </main>
 
         <aside class="side-panel">
-            <h3 class="panel-title">Coming Soon...</h3>
-            <p style="font-size: 0.9em; color: #888;">More trash panda updates arriving shortly!</p>
+            <h3 class="panel-title">Currently Playing</h3>
+            <span class="item-title">Arc Raiders</span>
+            <img src="arcraiders.jpg" alt="Arc Raiders" class="display-img">
+            <span class="info-text">Platform: PC</span>
+
+            <hr>
+
+            <h3 class="panel-title">Gaming Specs</h3>
+            <div class="info-text">
+                CPU: AMD Ryzen 7 9800 X3D<br>
+                MoBo: MSI Pro X870-P WiFi<br>
+                RAM: 32GB DDR5<br>
+                GPU: GeForce RTX 5070 Ti<br>
+                OS: Win 11 Pro
+            </div>
         </aside>
     </div>
 
