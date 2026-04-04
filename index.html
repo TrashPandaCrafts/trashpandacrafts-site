@@ -23,16 +23,24 @@
             padding: 20px; 
         }
 
-        /* --- Header Elements (Banner, Title, Bio) --- */
-        .header-section {
+        /* --- Header & Footer Sections --- */
+        .header-section, .footer-section {
             max-width: 1000px;
-            margin: 0 auto 40px auto;
+            margin: 0 auto;
+        }
+
+        .header-section {
+            margin-bottom: 40px;
+        }
+
+        .footer-section {
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
 
         .banner {
             width: 100%; 
             border-radius: 8px; 
-            margin-bottom: 20px; 
         }
 
         .title-image {
@@ -74,7 +82,6 @@
             background-color: #1a1a1a;
             border-radius: 8px;
             text-align: left;
-            /* This ensures they stay sticky/fixed near the feed as you scroll */
             position: sticky;
             top: 20px;
         }
@@ -157,7 +164,6 @@
 <body>
 
     <header class="header-section">
-        <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
         <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
         <p class="subtitle">I'm just a regular dad, digging through the recycling bin so you don't have to. I find the hidden art in boxes, junk, & scraps, then punch them into 1-inch stamps and like my occasional random beer! Hope to see you again and hope you join me in my journey to find peace through my hobby.</p>
     </header>
@@ -206,6 +212,10 @@
             <p style="font-size: 0.9em; color: #888;">More trash panda updates arriving shortly!</p>
         </aside>
     </div>
+
+    <footer class="footer-section">
+        <img src="banner.png" alt="Trash Panda Crafts Banner" class="banner">
+    </footer>
 
     <script>
         function switchFeed(feedType) {
