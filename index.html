@@ -29,19 +29,10 @@
             margin: 0 auto;
         }
 
-        .header-section {
-            margin-bottom: 40px;
-        }
+        .header-section { margin-bottom: 40px; }
+        .footer-section { margin-top: 40px; margin-bottom: 20px; }
 
-        .footer-section {
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-
-        .banner {
-            width: 100%; 
-            border-radius: 8px; 
-        }
+        .banner { width: 100%; border-radius: 8px; }
 
         .title-image {
             width: 100%;
@@ -61,7 +52,7 @@
             margin-right: auto;
         }
 
-        /* --- Main Feed Area with Side Panels --- */
+        /* --- Layout Wrapper --- */
         .feed-layout-wrapper {
             display: flex;
             justify-content: center;
@@ -71,10 +62,7 @@
             gap: 20px;
         }
 
-        .main-feed-container {
-            flex: 2;
-            max-width: 1000px;
-        }
+        .main-feed-container { flex: 2; max-width: 1000px; }
 
         .side-panel {
             flex: 1;
@@ -89,15 +77,13 @@
             top: 20px;
         }
 
-        /* --- Updated Daily Log Gallery Styling (Clean) --- */
+        /* --- Daily Log --- */
         .daily-update-container {
             max-width: 800px;
             margin: 0 auto 40px auto;
             padding: 25px;
-            /* Border and background removed per request */
             border: none;
             background-color: transparent;
-            border-radius: 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -127,22 +113,10 @@
             margin: 0;
         }
 
-        .daily-date {
-            font-size: 0.85em;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .daily-date { font-size: 0.85em; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .daily-text { font-size: 1.1em; color: #e0e0e0; line-height: 1.6; max-width: 650px; margin: 0; }
 
-        .daily-text {
-            font-size: 1.1em;
-            color: #e0e0e0;
-            line-height: 1.6;
-            max-width: 650px;
-            margin: 0;
-        }
-
-        /* --- Sidebar Typography & Elements --- */
+        /* --- Sidebar Typography --- */
         .panel-title {
             font-family: 'Sketch Block', Arial, sans-serif;
             font-weight: bold;
@@ -152,47 +126,35 @@
             margin-bottom: 15px;
         }
 
-        .item-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-            display: block;
-        }
+        .item-title { font-weight: bold; margin-bottom: 10px; display: block; }
 
         .display-img {
             width: 100%;
             height: auto;
             border-radius: 4px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .info-text {
-            font-size: 0.9em;
-            color: #888;
-            margin-bottom: 25px;
+        .info-text { font-size: 0.9em; color: #888; margin-bottom: 25px; display: block; line-height: 1.6; }
+        .story-text { font-size: 0.95em; color: #b0b0b0; text-align: left; line-height: 1.5; margin-bottom: 10px; }
+        
+        /* New Link Style for Sidebar */
+        .link-text {
             display: block;
-            line-height: 1.6;
+            font-size: 0.8em;
+            color: #66b3ff;
+            text-decoration: none;
+            margin-bottom: 15px;
         }
-
-        .story-text {
-            font-size: 0.95em;
-            color: #b0b0b0;
-            text-align: left; 
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
+        .link-text:hover { text-decoration: underline; }
 
         hr { border: 0; border-top: 1px solid #333; margin: 20px 0; }
 
-        .feed-toggles {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
+        /* --- IG Toggles --- */
+        .feed-toggles { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
         .toggle-btn {
             background-color: #1e1e1e;
             color: #888;
@@ -204,17 +166,37 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
-        .toggle-btn.active {
-            background-color: #66b3ff;
-            color: #121212;
-            border-color: #66b3ff;
-        }
+        .toggle-btn.active { background-color: #66b3ff; color: #121212; border-color: #66b3ff; }
 
         .ig-placeholder { border: none; padding: 0; background-color: transparent; }
         .feed-wrapper { display: none; }
         .feed-wrapper.active { display: block; }
         .lightwidget-widget { width: 100%; border: 0; overflow: hidden; }
+
+        /* --- LIGHTBOX (MODAL) STYLES --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            cursor: zoom-out;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            display: block;
+            max-width: 90%;
+            max-height: 85%;
+            border: 3px solid #66b3ff;
+            border-radius: 8px;
+            animation: zoomIn 0.3s ease;
+        }
+        @keyframes zoomIn { from {transform:scale(0.7); opacity:0} to {transform:scale(1); opacity:1} }
+        
+        .zoomable { cursor: zoom-in; transition: transform 0.2s; }
+        .zoomable:hover { transform: scale(1.02); border-color: #66b3ff; }
 
         /* --- MOBILE OPTIMIZATIONS --- */
         @media (max-width: 1100px) {
@@ -222,15 +204,13 @@
             .side-panel { width: 90%; max-width: none; position: static; margin-bottom: 20px; }
             .main-feed-container { width: 100%; order: -1; }
         }
-
-        @media (max-width: 600px) {
-            .subtitle { font-size: 1.1em; }
-            .feed-toggles { flex-direction: column; gap: 10px; }
-            .toggle-btn { width: 100%; font-size: 1.1em; }
-        }
     </style>
 </head>
 <body>
+
+    <div id="imageModal" class="modal" onclick="this.style.display='none'">
+        <img class="modal-content" id="imgViewer">
+    </div>
 
     <header class="header-section">
         <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
@@ -242,18 +222,16 @@
         <aside class="side-panel">
             <h3 class="panel-title">Currently Reading...</h3>
             <span class="item-title">Kaiju Preservation Society</span>
-            <a href="https://www.goodreads.com/book/show/57693406-the-kaiju-preservation-society?ac=1&from_search=true&qid=8IfmE68Cr7&rank=1" target="_blank">
-                <img src="currentlyreading.jpg" alt="Kaiju Preservation Society" class="display-img">
-            </a>
+            <img src="currentlyreading.jpg" alt="Kaiju Preservation Society" class="display-img zoomable" onclick="openLightbox(this)">
+            <a href="https://www.goodreads.com/book/show/57693406-the-kaiju-preservation-society" target="_blank" class="link-text">View on Goodreads</a>
             <span class="info-text">4/3/2026 - ??/??/????</span>
 
             <hr>
 
             <h3 class="panel-title">Previously Read</h3>
             <span class="item-title">Starter Villain</span>
-            <a href="https://www.goodreads.com/book/show/61885029-starter-villain" target="_blank">
-                <img src="previouslyread.jpg" alt="Starter Villain" class="display-img">
-            </a>
+            <img src="previouslyread.jpg" alt="Starter Villain" class="display-img zoomable" onclick="openLightbox(this)">
+            <a href="https://www.goodreads.com/book/show/61885029-starter-villain" target="_blank" class="link-text">View on Goodreads</a>
             <span class="info-text">3/31/2026 - 4/2/2026</span>
         </aside>
 
@@ -264,9 +242,9 @@
                 <span class="daily-date">April 8, 2026</span>
                 
                 <div class="daily-gallery">
-                    <img src="daily1.jpg" alt="Daily Scavenge Photo 1" class="daily-image">
-                    <img src="daily2.jpg" alt="Daily Scavenge Photo 2" class="daily-image">
-                    <img src="daily3.jpg" alt="Daily Scavenge Photo 3" class="daily-image">
+                    <img src="daily1.jpg" alt="Daily Tools" class="daily-image zoomable" onclick="openLightbox(this)">
+                    <img src="daily2.jpg" alt="Daily Organization" class="daily-image zoomable" onclick="openLightbox(this)">
+                    <img src="daily3.jpg" alt="Daily Items" class="daily-image zoomable" onclick="openLightbox(this)">
                 </div>
                 
                 <p class="daily-text">
@@ -294,9 +272,8 @@
         <aside class="side-panel">
             <h3 class="panel-title">Currently Playing</h3>
             <span class="item-title">Arc Raiders</span>
-            <a href="https://arcraiders.com/" target="_blank">
-                <img src="arcraiders.jpg" alt="Arc Raiders" class="display-img">
-            </a>
+            <img src="arcraiders.jpg" alt="Arc Raiders" class="display-img zoomable" onclick="openLightbox(this)">
+            <a href="https://arcraiders.com/" target="_blank" class="link-text">Visit Game Site</a>
             <span class="info-text">Platform: PC</span>
 
             <hr>
@@ -322,6 +299,15 @@
     </footer>
 
     <script>
+        // --- Lightbox Logic ---
+        function openLightbox(imgElement) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("imgViewer");
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        // --- Feed Toggle Logic ---
         function switchFeed(feedType) {
             const craftsFeed = document.getElementById('feed-crafts');
             const drinksFeed = document.getElementById('feed-drinks');
