@@ -89,7 +89,60 @@
             top: 20px;
         }
 
-        /* --- Typography & Elements --- */
+        /* --- Daily Log Gallery Styling --- */
+        .daily-update-container {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            padding: 25px;
+            border: 2px dashed #444;
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .daily-gallery {
+            display: grid;
+            gap: 15px;
+            width: 100%;
+            /* Toggles between 1 and 2 columns based on screen width */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            justify-items: center;
+        }
+
+        .daily-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 4px solid #2a2a2a;
+            object-fit: cover;
+        }
+
+        .daily-header {
+            font-family: 'Sketch Block', Arial, sans-serif;
+            font-size: 1.8em;
+            color: #66b3ff;
+            margin: 0;
+        }
+
+        .daily-date {
+            font-size: 0.85em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .daily-text {
+            font-size: 1.1em;
+            color: #e0e0e0;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0;
+        }
+
+        /* --- Sidebar Typography & Elements --- */
         .panel-title {
             font-family: 'Sketch Block', Arial, sans-serif;
             font-weight: bold;
@@ -181,7 +234,7 @@
 
     <header class="header-section">
         <img src="titlepage.png" alt="Welcome to Trash Panda Crafts" class="title-image">
-        <p class="subtitle">Welcome to my Hobbies Page. From Junk Journaling, Reading Books, Playing PC Games and having my occasional beer, to learning how to build a website. Hope you enjoy your stay and follow me on Instagram for more content!</p>
+        <p class="subtitle">Welcome to my Hobby Pages. From Junk Journaling, Reading Books, Playing PC Games and having my occasional beer, to learning how to build a website. Hope you enjoy your stay and follow me on Instagram for more content!</p>
     </header>
 
     <div class="feed-layout-wrapper">
@@ -205,6 +258,22 @@
         </aside>
 
         <main class="main-feed-container">
+            
+            <section class="daily-update-container">
+                <h2 class="daily-header">Daily Scavenge Log</h2>
+                <span class="daily-date">April 8, 2026</span>
+                
+                <div class="daily-gallery">
+                    <img src="daily1.jpg" alt="Daily Scavenge Photo 1" class="daily-image">
+                    <img src="daily2.jpg" alt="Daily Scavenge Photo 2" class="daily-image">
+                    <img src="daily3.jpg" alt="Daily Scavenge Photo 3" class="daily-image">
+                </div>
+                
+                <p class="daily-text">
+                    "New additions to my scrap tools! Cant wait to start rearranging and using the new items! Check them out."
+                </p>
+            </section>
+
             <div class="feed-toggles">
                 <button id="btn-crafts" class="toggle-btn active" onclick="switchFeed('crafts')">@TrashPandaCraftsHTX</button>
                 <button id="btn-drinks" class="toggle-btn" onclick="switchFeed('drinks')">@TrashPandaDrinks</button>
